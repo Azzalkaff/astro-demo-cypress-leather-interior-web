@@ -1,0 +1,44 @@
+---
+const services = [
+  {
+    title: "Custom Seat Upholstery",
+    description: "Bespoke designs tailored to your unique style, using premium materials for maximum comfort and durability.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>`
+  },
+  {
+    title: "Steering Wheel Wrapping",
+    description: "Enhance grip and aesthetics with professional steering wheel wraps in leather or Alcantara.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>`
+  },
+  {
+    title: "Roof Lining",
+    description: "Restore sagging or damaged headliners to factory-fresh condition with our precision fitment.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>`
+  }
+];
+---
+
+<section id="services" class="py-24 px-4 bg-light-bg relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-light-accent mb-4 tracking-tight">Our Services</h2>
+      <p class="text-light-muted max-w-2xl mx-auto text-lg">
+        Premium solutions to restore, customize, and elevate your vehicle's interior to perfection.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-black/5 hover:border-black/10 flex flex-col items-start relative overflow-hidden">
+          <div class="absolute -right-4 -top-4 w-24 h-24 bg-black/5 rounded-full blur-2xl group-hover:bg-light-accent/10 transition-colors duration-500"></div>
+          <div class="w-14 h-14 bg-light-accent text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 shadow-md" set:html={service.icon}>
+          </div>
+          <h3 class="text-xl font-bold text-light-accent mb-3">{service.title}</h3>
+          <p class="text-light-muted text-sm leading-relaxed">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

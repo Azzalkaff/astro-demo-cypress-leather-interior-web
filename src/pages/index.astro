@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/ui/HeroSection.astro';
+import AboutSection from '../components/ui/AboutSection.astro';
+import ServicesSection from '../components/ui/ServicesSection.astro';
+import GalleryGrid from '../components/ui/GalleryGrid.astro';
+import TestimonialSection from '../components/ui/TestimonialSection.astro';
+import FAQSection from '../components/ui/FAQSection.astro';
+---
+
+<BaseLayout title="Cypress Leather Interiors | Houston, TX">
+  <HeroSection />
+  <AboutSection />
+  <ServicesSection />
+  <GalleryGrid />
+  <TestimonialSection />
+  <FAQSection />
+  
+  <section id="contact" class="py-24 px-4 bg-light-accent relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Upgrade Your Interior?</h2>
+      <p class="text-white/90 mb-10 text-lg">Get in touch with us today for a free consultation and bring your car's interior back to life.</p>
+      <a href="mailto:contact@cypressleather.com" class="inline-block px-8 py-4 bg-white text-light-accent hover:bg-gray-100 active:scale-95 text-lg font-bold transition-all shadow-xl">
+        Contact Us Now
+      </a>
+    </div>
+  </section>
+</BaseLayout>
